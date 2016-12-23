@@ -13,7 +13,4 @@ RUN apt-get update && \
 RUN pip install --upgrade pip && \
     pip install awscli
 
-COPY aws-lambda-deploy-entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
-
-ENTRYPOINT ["/entrypoint.sh"]
+CMD ["aws"]
