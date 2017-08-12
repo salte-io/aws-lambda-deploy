@@ -9,9 +9,11 @@ RUN apt-get update && \
     curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
     apt-get install -y nodejs && \
     apt-get install -y jq && \
+    apt-get install -y groff && \
     apt-get clean
 
 RUN pip install --upgrade pip && \
-    pip install awscli
+    pip install awscli && \
+    pip install awsebcli
 
 CMD ["aws"]
