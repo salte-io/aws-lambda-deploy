@@ -10,6 +10,7 @@ RUN apt-get update && \
     apt-get install -y nodejs && \
     apt-get install -y jq && \
     apt-get install -y groff && \
+    apt-get install -y git && \
     apt-get clean
 
 RUN pip install --upgrade pip && \
