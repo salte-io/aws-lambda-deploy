@@ -1,8 +1,11 @@
 # aws-lambda-deploy
+
 ## Description
+
 Creates an environment containing both the AWS CLI as well as the AWS Elastic Beanstalk CLI.  It bears its name because its first use was to deploy AWS Lambda functions.  However, it can be used to interact with any AWS resources that are supported through one of the aforementioned CLIs.
 
 ## Instructions
+
 There are two primary use cases that this image was created to support.
 1. For use within a Gitlab CI YAML file.
 2. For use by an interactive user.
@@ -10,8 +13,9 @@ There are two primary use cases that this image was created to support.
 The following are simple examples of each use case.
 
 ### _.gitlab-ci.yml File Example_
-```
-image: salte-io/aws-lambda-deploy:latest
+
+```yml
+image: salte/aws-lambda-deploy:latest
 
 variables:
   AWS_ACCESS_KEY_ID: "ABCDEFGHIJKLMNOPQRST"              
@@ -37,29 +41,33 @@ deploy:master:
   only:
     - master
 ```
-### _Interactive Example_
-```
-$ docker run -it salte-io/aws-lambda-deploy sh
+
+### _AWS Interactive Example_
+
+```sh
+$ docker run -it salte/aws-lambda-deploy sh
 / # aws help
-AWS()                                                                    AWS()
-
-
-
 NAME
-       aws -
+  aws -
 
 DESCRIPTION
-       The  AWS  Command  Line  Interface is a unified tool to manage your AWS
-       services.
+  The AWS Command Line Interface is a unified tool to manage your AWS
+  services.
 
 SYNOPSIS
-          aws [options] <command> <subcommand> [parameters]
+  aws [options] <command> <subcommand> [parameters]
 
-       Use aws command help for information on a  specific  command.  Use  aws
-       help  topics  to view a list of available help topics. The synopsis for
-       each command shows its parameters and their usage. Optional  parameters
-       are shown in square brackets.
-    ...
+  Use aws command help for information on a specific command.  Use aws
+  help topics to view a list of available help topics. The synopsis for
+  each command shows its parameters and their usage. Optional parameters
+  are shown in square brackets.
+...
+```
+
+### _EB Interactive Example_
+
+```sh
+$ docker run -it salte/aws-lambda-deploy sh
 / # eb --help
 usage: eb (sub-commands ...) [options ...] {arguments ...}
 
