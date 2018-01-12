@@ -15,6 +15,6 @@ RUN apt-get update && \
 
 RUN pip install --upgrade pip && \
     pip install awscli && \
-    pip install awsebcli
+    pip install --upgrade awsebcli
 
 CMD ["aws"]
